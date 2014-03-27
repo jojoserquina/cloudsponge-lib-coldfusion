@@ -4,11 +4,11 @@ ColdFusion library for CloudSponge integration. This implementation is to demost
 # Requirements
 * ColdFusion 9+
 
-# Installation:
+# Installation
 * Unzip files to your web directory
 * Review and update csconfig.xml with your domain key and password 
 
-# Files:
+# Files
 * csconfig.xml - CloudSponge configuration file. Update file with your domain key and pass code. The rest of the settings are self-explanatory.
 * Services/Integration/CloudSponge/CloudSpongeController.cfc - controller component that interfaces with the services.
 * Services/Integration/CloudSponge/CloudSpongeService.cfc - component that interfaces with CloudSponge
