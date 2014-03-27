@@ -1,5 +1,5 @@
 # CloudSponge ColdFusion Library
-ColdFusion library for CloudSponge integration. This implementation is to demostrate how to interface with the CloudSponge API. Use, modify, as you see fit.
+ColdFusion library for CloudSponge integration. This implementation is to demonstrate how to interface with the CloudSponge API. Use, modify, as you see fit.
 
 # Requirements
 * ColdFusion 9+
@@ -14,7 +14,9 @@ ColdFusion library for CloudSponge integration. This implementation is to demost
 * Services/Integration/CloudSponge/CloudSpongeService.cfc - component that interfaces with CloudSponge
 * views/CloudSponge.cfm - Landing page
 * views/csauth.cfm - Initiate of 'begin_import'. Also as a return_url when establishing user consumer credentials in CloudSponge
-* views/csLocalAuth.cfm - Used when local applet or partial/full rebranding of the java applet
+* views/csLocalAuth.cfm - Used when local applet or partial/full re-branding of the Java applet
 * views/csimport.cfm - Used for monitoring the status of the import 
 * views/csDownload.cfm - Download page
 
+# Author
+SignUpGenius
