@@ -20,5 +20,6 @@ ColdFusion library for CloudSponge integration. This implementation is to demons
 
 # Author
 *Jojo Serquina*, Senior Developer at **[SignUpGenius.com](http://www.signupgenius.com/)**
+
 **SignUpGenius** simplifies the process of coordinating events and people by providing online sign ups for non-profits, schools, sports, churches, families, colleges, businesses, and organizations. 
 
