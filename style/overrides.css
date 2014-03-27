@@ -1,0 +1,76 @@
+@CHARSET "ISO-8859-1";
+/* these are overrides specific to CloudSponge */
+body { 
+	overflow-x:hidden;
+	overflow-y:hidden; 
+}
+
+.ui-dialog { 
+	overflow-x:hidden;
+	overflow-y:hidden; 
+}
+
+.ui-dialog-title {
+	color: #FFF !important;
+}
+
+.ui-dialog-titlebar-close {
+	visibility: hidden;
+}
+
+td.smalltextbold{
+	color: #fff !important;
+	padding-left: 3px !important;
+	font-size: 11px;
+	font-family: verdana, arial;
+}
+
+td.smallText2 {
+	font-size: 11px;
+	font-family: verdana, arial;
+	padding-left: 3px !important;
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+	background-color: #FFF !important;
+	word-wrap: break-word !important;
+	
+}
+
+.ui-dialog .ui-dialog-title {
+	overflow-x:hidden;
+	overflow-y:hidden; 
+  	padding-left: 25px;
+}
+
+table.tblHeader{
+	background-color: rgb(204, 204, 204);
+	background-image: url(http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png);
+	background-origin: padding-box;
+	background-size: auto;
+}
+
+div#importedRecords {
+	border-left: 1px solid rgb(170, 170, 170);
+	border-bottom: 1px solid rgb(170, 170, 170);
+	border-right: 1px solid rgb(170, 170, 170);
+	min-height: 50px;
+}
+
+div#divRecords {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+div.roundedDiv {
+	border:2px solid rgb(170, 170, 170);
+	width:260px;
+	padding:6px;
+	border-radius:8px;
+}
+
+div.downloadDiv {
+	border-left:1px solid rgb(170, 170, 170);
+	border-bottom:1px solid rgb(170, 170, 170);
+	border-right:1px solid rgb(170, 170, 170);
+	min-height:50px;"
+}

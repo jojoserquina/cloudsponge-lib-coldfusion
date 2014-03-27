@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cs name="CloudSpongeConfig" 
+	domain_key="REPLACE_DOMAIN_KEY"
+	domain_password="REPLACE_DOMAIN_PASSWORD" 
+	BaseURL="https://api.cloudsponge.com"
+	AuthURL="/auth?"
+	BeginURL="/begin_import/user_consent"
+	EventURL="/events"
+	DownloadURL="/contacts"
+	DesktopURL="/begin_import/desktop_applet"
+	webBasedMail="gmail,yahoo,windowslive,aol,plaxo,facebook,linkedin" 
+	localMail="addressbook,outlook"
+	appletURL="/objects/ContactsApplet_signed.jar">
+	<!-- application Specific Settings:
+		excludedDomains				: list of excluded email domains
+		includeNonPrimaryEmails		: whether to include non-primary emails for all contacts. Default is false
+		ValidateEmail				: IMPORTANT! Setting this to TRUE could potentially slowdown the import process 
+		listOfGroupEmails			: list of known group domain emails 
+		appletURL					: used for rebranding the CloudSponge applet -->
+	<app name="AppConfig" 
+		 enabledServices="yahoo,gmail,windowslive,aol,plaxo,facebook,linkedin,outlook,addressbook"
+		 excludedDomains="craigslist.com,craigslist.org,ebay.com,sale.craigslist.org,hous.craigslist.org,members.ebay.com,mail.v2.projectix.com,news.cafepress.com"
+		 includeNonPrimaryEmails="false" 
+		 ValidateEmail="false" 
+		 listOfGroupEmails="googlegroups.com,yahoogroups.com"
+		 appletURL="/Util/ContactsApplet_signed.jar"
+		 branding="partial">
+	</app>
+</cs>

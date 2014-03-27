@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cs name="CloudSpongeConfig" 
+	DK="W8ZGXEF3JUGWCYUDNBQN"
+	DP="ayFfa65SaOanji1" 
+	BaseURL="https://api.cloudsponge.com"
+	AuthURL="/auth?"
+	BeginURL="/begin_import/user_consent"
+	EventURL="/events"
+	DownloadURL="/contacts"
+	DesktopURL="/begin_import/desktop_applet"
+	webBasedMail="gmail,yahoo,windowslive,aol,plaxo,facebook,linkedin" 
+	localMail="addressbook,outlook"
+	appletURL="/objects/ContactsApplet_signed.jar">
+	<!-- SignUpGenius Specific Settings:
+		excludedDomains				: list of excluded email domains
+		includeNonPrimaryEmails		: whether to include non-primary emails for all contacts. Default is false
+		ValidateEmail				: IMPORTANT! Setting this to TRUE could potentially slowdown the import process 
+		listOfGroupEmails			: list of known group domain emails 
+		appletURL					: used for rebranding the CloudSponge applet -->
+	<sug name="SignUpGeniusConfig" 
+		 enabledServices="yahoo,gmail,windowslive,aol,outlook"
+		 excludedDomains="signupgenius.com,facebook.com,craigslist.com,craigslist.org,ebay.com,sale.craigslist.org,hous.craigslist.org,members.ebay.com,mail.v2.projectix.com,news.cafepress.com"
+		 includeNonPrimaryEmails="false" 
+		 ValidateEmail="false" 
+		 listOfGroupEmails="googlegroups.com,yahoogroups.com"
+		 appletURL="/plugins/CloudSponge/ContactsApplet_signed.jar"
+		 branding="partial">
+	</sug>
+</cs>
+<!-- 
+	* branding options: 
+		none - CloudSponge hosts the jar file
+		partial - SignUpGenius hosts the jar file, but unsigned
+		full - SignUpGenius hosts the SUG signed jar file.
+	* add supported services to enabledServices 
+	* CloudSponge Test:
+	DK: L342EWAK7ZLEXXGH4YB7
+	DP: Zfubnou8Hbwycth1
+ -->
