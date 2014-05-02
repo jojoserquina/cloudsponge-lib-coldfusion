@@ -320,28 +320,34 @@ component output="false" {
 	**/
 	private query function formatResultToQuery( required string jsonData, boolean validateData="true" ){
 	
-		var contacts = deserializeJSON(Arguments.jsonData).contacts;
 		var qContacts = QueryNew("email,first_name,last_name","VarChar,VarChar,VarChar");
 		var domainBlackList = variables.excludedDomains; 
 		var blnIncludeAll = variables.includeNonPrimaryEmails; 
+		var contacts = '';
+        var rawJSONData = deserializeJSON(Arguments.jsonData);
+
+        /* gotta make sure that contacts were imported before trying to parse it */        
+        if( IsDefined("rawJSONData.contacts") )
+		    contacts = rawJSONData.contacts;
+		else
+		    return qContacts; // no need to proceed. return an empty query, to prevent erroring out.
 		
 	    // extract contacts
 	    for( contact in contacts ){
 	    	
 	    	var blnIsPrimary = false;
-	    	/* 
-	    	* we only want the records with email addresses. we can potentially, also add additional validations
-	    	* e.g 
-	    	* 	1) Validate that email is valid ( blnValidateEmail = objCloudSponge.validateEmail() )
-	    	*	2) Exclude a blacklist of domains that are not allowed (@craigslist, @ebay, @quibids, etc.)
-	    	* 	3) Filter for group type emails (@yahoogroups.com, etc.)
-	    	* 	4) Potentially pull other data (phone, address, etc.)
-	    	**/
-	    	if( ArrayLen(contact.email) > 0 ){
+	    	/** 
+	    	 * we only want the records with email addresses. we can potentially, also add additional validations
+	    	 * e.g 
+	    	 * 	1) Validate that email is valid ( blnValidateEmail = objCloudSponge.validateEmail() )
+	    	 *	2) Exclude a blacklist of domains that are not allowed (@craigslist, @ebay, @quibids, etc.)
+	    	 * 	3) Filter for group type emails (@yahoogroups.com, etc.)
+	    	 * 	4) Potentially pull other data (phone, address, etc.)
+	    	 **/
+	    	if( IsDefined("contact.email") && ArrayLen(contact.email) > 0 ){
 		    	try{
-			    	
 			    	// evaluate if there are multiple emails for the same user
-			    	if( ArrayLen(contact.email) == 1 && !ListFindNoCase(domainBlackList,ListLast(contact.email[1].address,'@'))){
+			    	if( ArrayLen(contact.email) == 1 && !ListFindNoCase(domainBlackList,ListLast(contact.email[1].address,'@')) && IsValid('email',contact.email[1].address) ){
 			    		// add new row and set cells
 				    	QueryAddRow(qContacts,1);
 				    	QuerySetCell(qContacts,'email',contact.email[1].address);
@@ -353,7 +359,7 @@ component output="false" {
 							
 							blnIsPrimary = false;
 			    			strEmailDomain = ListLast(contact.email[c].address,'@');
-			    			if( !ListFindNoCase(domainBlackList,strEmailDomain) ){
+			    			if( !ListFindNoCase(domainBlackList,strEmailDomain) && IsValid('email',contact.email[c].address) ){
 				    			// gmail, aol, yahoo
 				    			try { 
 				    				 blnIsPrimary = contact.email[c].primary;
