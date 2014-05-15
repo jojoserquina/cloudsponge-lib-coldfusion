@@ -28,7 +28,7 @@
 				else if ( service == 'linkedin' ) strImgTitle = 'LinkedIn';
 			</cfscript>
 				<cfoutput>
-					<img src="/views/#service#.png" border="0" onclick="javascript:launchPopUp('#service#','#application.apphost#/views/csauth.cfm?service=#service#');" title="#strImgTitle#" height="25px" />
+					<img src="#application.apphost#/images/#service#.png" border="0" onclick="javascript:launchPopUp('#service#','#application.apphost#/views/csauth.cfm?service=#service#');" title="#strImgTitle#" height="25px" />
 				</cfoutput>
 			</cfloop>
 		</div>
